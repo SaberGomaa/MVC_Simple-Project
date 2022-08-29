@@ -30,15 +30,53 @@ namespace MVCDay3.Controllers
 
             return View(st);
         }
-
         public ActionResult about()
         {
             return View();
         }
-
         public ActionResult contact()
         {
             return View();
         }
+
+
+        public ActionResult create()
+        {
+            List<Department> db = context.Departments.ToList();
+            ViewBag.dpts = db;
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult create(Student s)
+        {
+            context.Students.Add(s);
+            context.SaveChanges();
+
+            return RedirectToAction("Index" , "Students") ;
+        }
+
+
+        public ActionResult find()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult find(string name)
+        {
+            List<Student> st = context.Students.Where(s => s.Name.Contains(name)).ToList();
+
+            return View(st);
+        }
+
+        public ActionResult edit(int id)
+        {
+            Student s = context.Students.Find(id);
+            List<Department> db = context.Departments.ToList();
+            ViewBag.dpts = db;
+            return View(s);
+        }
+
     }
 }

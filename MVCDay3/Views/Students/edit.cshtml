@@ -1,0 +1,49 @@
+﻿@model MVCDay3.Models.Student
+@{
+    ViewBag.title = "edit";
+    Layout = "~/Views/Shared/_layout.cshtml";
+}
+
+
+<form method="post">
+    <table class="form-table">
+        <tr>
+            <td>Name</td>
+            <td><input type="text" name="Name" value="@Model.Name"/></td>
+        </tr>
+        <tr>
+            <td>Age</td>
+            <td><input type="text" name="Age" value="@Model.Age"/></td>
+        </tr>
+        <tr>
+            <td>Address</td>
+            <td><input type="text" name="Address" value="@Model.Address"/></td>
+        </tr>
+        <tr>
+            <td>DepartmentID</td>
+            <td>
+                <select name="DeptId">
+                    @{
+                        foreach (var i in (List<MVCDay3.Models.Department>)ViewBag.dpts)
+                        {
+                            if (i.DeptId == Model.DeptId)
+                            {
+                                <option value="@i.DeptId" selected>@i.Name</option>
+                            }
+                            else
+                            {
+                                <option value="@i.DeptId">@i.Name</option>
+                            }
+                        }
+                    }
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><button type="submit">Update</button></td>
+        </tr>
+    </table>
+
+</form>
+

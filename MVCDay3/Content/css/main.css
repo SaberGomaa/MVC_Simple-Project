@@ -1,0 +1,40 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    background-color: rgb(88, 88, 88);
+}
+
+.header {
+    height: 80px;
+    background-color: rgb(28, 28, 28);
+    padding: 20px;
+    padding-left: 80px;
+    display: grid;
+    grid-template-columns: auto repeat(4 , 150px);
+    align-items: center;
+    font-size: 24px;
+}
+
+a {
+    color: white!important;
+    text-decoration: none!important;
+}
+
+.mid{
+    height: 700px;
+    display: grid;
+    grid-template-columns: 25% 75%;
+    font-size: 22px;
+}
+
+.slidbar{
+    padding: 15px;
+    padding-left: 50px;
+    display: grid;
+    grid-template-rows: repeat(5 , 80px);
+    background-color : rgb(28, 28, 28)
+}
+.main{
+    padding: 20px;
+    color: white;
+}

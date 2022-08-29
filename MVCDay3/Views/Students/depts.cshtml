@@ -1,0 +1,24 @@
+﻿@model List<MVCDay3.Models.Department>
+@{
+    ViewBag.title = "Departments";
+    Layout = "~/Views/Shared/_layout.cshtml";
+}
+
+<table class="table table-active">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Loaction</th>
+
+    </tr>
+    @{
+        foreach (var i in Model)
+        {
+            <tr>
+                <td>@i.DeptId</td>
+                <td>@i.Name</td>
+                <td>@i.Location</td>
+            </tr>
+        }
+    }
+</table>

@@ -1,0 +1,29 @@
+﻿@model List<MVCDay3.Models.Instractor>
+@{
+    ViewBag.title = "instractor";
+    Layout = "~/Views/Shared/_layout.cshtml";
+}
+
+
+<table class="table table-active">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>HireDate</th>
+        <th>Department</th>
+
+    </tr>
+    @{
+        foreach (var i in Model)
+        {
+            <tr>
+                <td>@i.Id</td>
+                <td>@i.Name</td>
+                <td>@i.Age</td>
+                <td>@i.Hiredata</td>
+                <td>@i.Department.Name</td>
+            </tr>
+        }
+    }
+</table>

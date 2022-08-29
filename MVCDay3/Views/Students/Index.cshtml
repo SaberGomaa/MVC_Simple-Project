@@ -32,7 +32,7 @@
             <td>@i.Address</td>
             <td>@i.department.Name</td>
             <td>@Html.ActionLink("Edit", "edit", "Students", new { id = i.Id }, new { @class = "btn btn-info" })</td>
-            <td>@Html.ActionLink("Delete", "delete", "Students", new { id = i.Id }, new { @class = "btn btn-danger" })</td>
+            <td>@Html.ActionLink("Delete", "delete", "Students", new { id = i.Id }, new { onclick = "return confirm('Are You Sure To Delete" + i.Name + "')" , @class = "btn btn-danger" })</td>
 
         </tr>
         }

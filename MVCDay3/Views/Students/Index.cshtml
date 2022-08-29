@@ -5,10 +5,13 @@
 }
 
 @Html.ActionLink("Add Student", "create", "Students", new { @class = "btn btn-info pd-10" })
-@Html.ActionLink("Find Student", "find", "Students", new { @class = "btn btn-info pd-10" })
+<br /><br />
 
-<br />
-<br />
+<form method="post">
+    <input type="text" name="name"/>
+    <button class="btn btn-info" type="submit">@Html.ActionLink("Find" , "find" , "Students" )</button>
+</form>
+<br /><br />
 
 <table class="table table-active">
     <tr>
@@ -17,17 +20,21 @@
         <th>Address</th>
         <th>Department</th>
         <th>Edit</th>
+        <th>Delete</th>
+
     </tr>
     @{
         foreach (var i in Model)
         {
-            <tr>
-                <td>@i.Name</td>
-                <td>@i.Age</td>
-                <td>@i.Address</td>
-                <td>@i.department.Name</td>
-                <td>@Html.ActionLink("Edit" , "edit" , "Students" , new {id = i.Id},new {@class="btn btn-info"})</td>
-            </tr>
+        <tr>
+            <td>@i.Name</td>
+            <td>@i.Age</td>
+            <td>@i.Address</td>
+            <td>@i.department.Name</td>
+            <td>@Html.ActionLink("Edit", "edit", "Students", new { id = i.Id }, new { @class = "btn btn-info" })</td>
+            <td>@Html.ActionLink("Delete", "delete", "Students", new { id = i.Id }, new { @class = "btn btn-danger" })</td>
+
+        </tr>
         }
     }
 </table>

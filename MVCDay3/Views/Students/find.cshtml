@@ -1,20 +1,29 @@
-﻿
+﻿@model List<MVCDay3.Models.Student>
 @{
-    ViewBag.Title = "find";
+    ViewBag.title = "Search Result";
     Layout = "~/Views/Shared/_layout.cshtml";
 }
 
-<form method="post">
-    <table class="form-table">
-        <tr>
-            <td>Enter Student Name</td>
-            <td><input type="text" name="Name" /></td>
 
-        </tr>
-        <tr>
-            <td></td>
-            <td><button type="submit">Find</button></td>
 
-        </tr>
-    </table>
-</form>
+<table class="table table-active">
+    <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Address</th>
+        <th>Department</th>
+
+    </tr>
+    @{
+        foreach (var i in Model)
+    {
+    <tr>
+        <td>@i.Name</td>
+        <td>@i.Age</td>
+        <td>@i.Address</td>
+        <td>@i.department.Name</td>
+    </tr>
+}
+    }
+</table>
+

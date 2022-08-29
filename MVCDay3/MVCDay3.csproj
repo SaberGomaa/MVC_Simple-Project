@@ -169,8 +169,8 @@
     <Content Include="Views\Students\instractor.cshtml" />
     <Content Include="Views\Students\depts.cshtml" />
     <Content Include="Views\Students\create.cshtml" />
-    <Content Include="Views\Students\find.cshtml" />
     <Content Include="Views\Students\edit.cshtml" />
+    <Content Include="Views\Students\find.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

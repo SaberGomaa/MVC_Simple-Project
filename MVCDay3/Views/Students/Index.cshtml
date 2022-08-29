@@ -7,9 +7,9 @@
 @Html.ActionLink("Add Student", "create", "Students", new { @class = "btn btn-info pd-10" })
 <br /><br />
 
-<form method="post">
-    <input type="text" name="name"/>
-    <button class="btn btn-info" type="submit">@Html.ActionLink("Find" , "find" , "Students" )</button>
+<form method="post" action="find">
+    <input type="text" name="Name"/>
+    <button class="btn btn-info" type="submit">Find</button>
 </form>
 <br /><br />
 

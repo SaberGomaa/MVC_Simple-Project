@@ -39,8 +39,6 @@ namespace MVCDay3.Controllers
         {
             return View();
         }
-
-
         public ActionResult create()
         {
             List<Department> db = context.Departments.ToList();
@@ -56,10 +54,10 @@ namespace MVCDay3.Controllers
 
             return RedirectToAction("Index" , "Students") ;
         }
-
-        public ActionResult find(string name)
+       
+        public ActionResult find(string Name)
         {
-            List<Student> st = context.Students.Where(e=>e.Name.Contains(name)).ToList();
+            List<Student> st = context.Students.Where(e=>e.Name.Contains(Name)).ToList();
 
             return View(st);
         }
